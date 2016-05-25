@@ -11,6 +11,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.java.target>1.8</project.build.java.target>
+		<org.typescriptlang.typescript.version>1.8.10</org.typescriptlang.typescript.version>
 	</properties>
 
 	<name>Java tsc wrapper</name>
@@ -27,7 +28,31 @@
 					<target>${project.build.java.target}</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.0</version>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>${project.basedir}/src/main/javascript</directory>
+				<filtering>false</filtering>
+			</resource>
 		</resources>
 	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>typescript</artifactId>
+			<version>${org.typescriptlang.typescript.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+	</dependencies>
 
 </project>
