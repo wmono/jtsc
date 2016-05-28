@@ -14,7 +14,7 @@
 		<org.typescriptlang.typescript.version>1.8.10</org.typescriptlang.typescript.version>
 	</properties>
 
-	<name>Java tsc wrapper</name>
+	<name>JVM tsc wrapper</name>
 	<description>Runs the TypeScript Compiler on the JVM</description>
 
 	<build>

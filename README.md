@@ -1,4 +1,4 @@
-# Java wrapper for the TypeScript Compiler
+# JVM Wrapper for the TypeScript Compiler
 
 This project is
  - a wrapper to allow `tsc` to run on the JVM, plus

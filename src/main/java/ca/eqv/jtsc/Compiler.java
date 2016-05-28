@@ -26,7 +26,7 @@ public class Compiler {
 				throw e;
 			}
 		}
-		loadLocalLib("JavaSystem.js");
+		loadLocalLib("JVMSystem.js");
 	}
 
 	public void execute() throws ScriptException {
