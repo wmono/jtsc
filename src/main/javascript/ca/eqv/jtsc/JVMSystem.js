@@ -1,7 +1,9 @@
-/* globals ts, Java */
+/* globals ts, jtsc, Java */
 
 ts.sys = (function getSystem() {
 	"use strict";
+
+	var executingFilePathMagic = "$$_EXECUTING_FILE_PATH_$$";
 
 	var JavaString = Java.type("java.lang.String");
 	var System = Java.type("java.lang.System");
@@ -32,6 +34,9 @@ ts.sys = (function getSystem() {
 	}
 
 	function readFile(path, encoding) {
+		if (path.startsWith(executingFilePathMagic)) {
+			return jtsc.readTsLib(path.substr(executingFilePathMagic.length));
+		}
 		var bytes = Files.readAllBytes(Paths.get(path));
 		if (encoding) {
 			return new JavaString(bytes, encoding);
@@ -65,7 +70,7 @@ ts.sys = (function getSystem() {
 	}
 
 	function getExecutingFilePath() {
-		return System.getProperty("executingFilePath") || "tsc.js";
+		return executingFilePathMagic + "/tsc.js";
 	}
 
 	function getCurrentDirectory() {
