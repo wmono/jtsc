@@ -28,7 +28,7 @@ ts.sys = (function getSystem() {
 	}
 
 	function print(s) {
-		System.out.println(s);
+		System.out.print(s);
 	}
 
 	function readFile(path, encoding) {
