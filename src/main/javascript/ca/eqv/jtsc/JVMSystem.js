@@ -78,7 +78,6 @@ ts.sys = (function getSystem() {
 	}
 
 	return {
-		args: [],//FIXME
 		newLine: System.lineSeparator(),
 		useCaseSensitiveFileNames: useCaseSensitiveFileNames,
 		write: print,

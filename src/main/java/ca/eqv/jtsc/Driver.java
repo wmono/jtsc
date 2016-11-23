@@ -8,7 +8,7 @@ import javax.script.ScriptException;
 
 public class Driver {
 
-	public static void main(final String[] args) throws IOException, ScriptException {
+	public static void main(final String[] args) throws IOException, ScriptException, NoSuchMethodException {
 		final String tsVersion;
 		try (final InputStream in = Driver.class.getResourceAsStream("jtsc.properties")) {
 			final Properties properties = new Properties();
@@ -17,7 +17,7 @@ public class Driver {
 		}
 
 		final Compiler compiler = new Compiler(tsVersion);
-		compiler.execute();
+		compiler.execute(args);
 	}
 
 }
