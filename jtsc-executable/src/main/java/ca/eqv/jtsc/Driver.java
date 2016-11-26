@@ -17,7 +17,8 @@ public class Driver {
 		}
 
 		final Compiler compiler = new Compiler(tsVersion);
-		compiler.execute(args);
+		final Integer returnValue = compiler.execute(args);
+		System.exit(returnValue == null ? -1 : returnValue);
 	}
 
 }
