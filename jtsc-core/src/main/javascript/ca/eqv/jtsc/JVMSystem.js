@@ -95,7 +95,10 @@ ts.sys = (function getSystem() {
 		getModifiedTime: undefined,
 		createHash: undefined,
 		getMemoryUsage: undefined,
-		exit: function() {},
+		exitCode: 0,
+		exit: function (exitCode) {
+			this.exitCode = exitCode;
+		}
 	};
 
 }());

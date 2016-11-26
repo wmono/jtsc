@@ -39,11 +39,18 @@ public class Compiler {
 		loadLocalLib("JVMSystem.js");
 	}
 
-	public void execute(final String... arguments) throws ScriptException, NoSuchMethodException {
+	public Integer execute(final String... arguments) throws ScriptException, NoSuchMethodException {
 		final Bindings bindings = js.getBindings(ScriptContext.ENGINE_SCOPE);
 		final Object ts = bindings.get("ts");
 		final Object repackedArguments = js.invokeFunction("jtsc_repackArgs", (Object[]) arguments);
 		js.invokeMethod(ts, "executeCommandLine", repackedArguments);
+
+		final Object exitCode = js.eval("ts.sys.exitCode");
+		if (exitCode != null && exitCode instanceof Integer) {
+			return (Integer) exitCode;
+		} else {
+			return null;
+		}
 	}
 
 	private void loadLocalLib(final String filename) throws IOException, ScriptException {
