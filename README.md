@@ -18,16 +18,40 @@ developers may be able to work around these roadblocks, a requirement
 to install new software on the build server is more likely to remain
 a problem.
 
-## Why not?
-
-It's slow. Nashorn in JDK 8 is optimized for running long-lived
-(e.g. daemon) processes. Programs that start up and terminate pay
-a large startup cost then don't gain much benefit from the faster
-ongoing execution. JDK 9 might address this to some degree.
-
 ## How to use
 
-You don't, yet.
+- Build and install the plugin into your local repository:
+```
+	$ mvn -am -pl jtsc-maven-plugin install
+```
+- Configure the plugin in your project:
+```xml
+	<plugin>
+		<groupId>ca.eqv.jtsc</groupId>
+		<artifactId>jtsc-maven-plugin</artifactId>
+		<version>0.1.0.BUILD-SNAPSHOT</version>
+		<executions>
+			<execution>
+				<goals>
+					<goal>compile</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
+```
+- Place a `tsconfig.json` in your project root (next to `pom.xml`)
+- Compile your project.
+
+### Try the self-contained executable
+
+- Build the executable:
+```
+	$ mvn -am -pl jtsc-executable package
+```
+- Run it:
+```
+	$ java -jar jtsc-executable/target/jtsc-executable-*-jar-with-dependencies.jar --help
+```
 
 ## See also
 
