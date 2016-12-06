@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"module": "system",
+		"target": "es5",
+		"outDir": "target/generated-resources/typescript"
+	},
+	"files": [
+		"src/main/typescript/Application.ts"
+	]
+}
