@@ -9,6 +9,9 @@ This project is
 This project is currently in a proof-of-concept stage and is not
 suitable for use by end users.
 
+In particular, readDirectory is not implemented yet, so tsc.js will
+only be able to locate explicitly named files.
+
 ## Why?
 
 There are a variety of reasons that a development team can't require
@@ -20,10 +23,15 @@ a problem.
 
 ## How to use
 
-- Build and install the plugin into your local repository:
+First, build and install the plugin into your local repository:
 ```
 	$ mvn -am -pl jtsc-maven-plugin install
 ```
+
+See the `demo-project` project for a minimal but complete project.
+
+### Using `jtsc-maven-plugin` in your project
+
 - Configure the plugin in your project:
 ```xml
 	<plugin>
@@ -42,7 +50,7 @@ a problem.
 - Place a `tsconfig.json` in your project root (next to `pom.xml`)
 - Compile your project.
 
-### Try the self-contained executable
+### Using the self-contained `tsc` equivalent executable
 
 - Build the executable:
 ```
