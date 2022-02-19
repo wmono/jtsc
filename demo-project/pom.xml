@@ -4,35 +4,31 @@
 
 	<groupId>com.example</groupId>
 	<artifactId>demo-project</artifactId>
-	<version>0</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>Demo Project</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
 	</properties>
 
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.0.0</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-			</plugin>
-			<plugin>
 				<groupId>ca.eqv.jtsc</groupId>
 				<artifactId>jtsc-maven-plugin</artifactId>
-				<version>0.1.0.BUILD-SNAPSHOT</version>
+				<version>1.0.0-SNAPSHOT</version>
 				<dependencies>
-					<!-- Optionally, use a different version of TypeScript. -->
+					<!-- Current default TypeScript version is 4.5.5 -->
+					<!-- Optionally, use a different version of TypeScript available from https://mvnrepository.com/artifact/org.webjars.npm/typescript -->
 					<!--
 					<dependency>
 						<groupId>org.webjars.npm</groupId>
 						<artifactId>typescript</artifactId>
-						<version>1.8.10</version>
+						<version>3.9.10</version>
 					</dependency>
 					-->
 				</dependencies>

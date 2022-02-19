@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>ca.eqv.jtsc</groupId>
 		<artifactId>jtsc</artifactId>
-		<version>0.1.0.BUILD-SNAPSHOT</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>jtsc-maven-plugin</artifactId>
-	<version>0.1.0.BUILD-SNAPSHOT</version>
 	<packaging>maven-plugin</packaging>
 
 	<name>JVM tsc wrapper - Maven plugin</name>
-
-	<prerequisites>
-		<maven>3.1</maven>
-	</prerequisites>
 
 	<build>
 		<plugins>
@@ -35,10 +33,12 @@
 		<dependency>
 			<groupId>org.apache.maven</groupId>
 			<artifactId>maven-plugin-api</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.maven.plugin-tools</groupId>
 			<artifactId>maven-plugin-annotations</artifactId>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 

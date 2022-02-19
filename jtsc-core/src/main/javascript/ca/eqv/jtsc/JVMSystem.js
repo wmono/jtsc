@@ -58,7 +58,7 @@ ts.sys = (function getSystem() {
 		if (writeByteOrderMark) {
 			data = "\uFEFF" + data;
 		}
-		Files.write(Paths.get(path), new JavaString(data).getBytes("UTF-8"));
+		Files.writeString(Paths.get(path), data);
 	}
 
 	function resolvePath(path) {
